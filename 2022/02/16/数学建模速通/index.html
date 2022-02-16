@@ -136,11 +136,9 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2
-id="后天开始建模了两天时间速通一下">后天开始建模了，两天时间速通一下😇</h2>
-<h4 id="线性规划">线性规划</h4>
-<ul>
-<li><p>标准形式: <span class="math display">\[
+        <h2 id="后天开始建模了，两天时间速通一下😇"><a href="#后天开始建模了，两天时间速通一下😇" class="headerlink" title="后天开始建模了，两天时间速通一下😇"></a>后天开始建模了，两天时间速通一下😇</h2><h4 id="线性规划"><a href="#线性规划" class="headerlink" title="线性规划"></a>线性规划</h4><ul>
+<li><p>标准形式:</p>
+<script type="math/tex; mode=display">
 \min_x \boldsymbol f^ \mathrm{T} \boldsymbol x \\\
 \left\{
 \begin{aligned}
@@ -148,20 +146,17 @@ id="后天开始建模了两天时间速通一下">后天开始建模了，两�
 Aeq \cdot \boldsymbol x  = beq \\\
 lb  \le  \boldsymbol x \le ub
 \end{aligned}
-\right.
-\]</span></p></li>
+\right.</script></li>
 <li><p>matlab函数: <code>[x,y] = linprog(f,A,b,Aeq,beq,lb,ub)</code></p>
 <ul>
 <li>规范形式中不等号都默认<strong>小于号</strong>，题目中出现大于号是取负</li>
-<li>若求最大值，则将<span class="math inline">\(- \boldsymbol
-f\)</span>作为参数，<strong>最后的结果取反</strong></li>
+<li>若求最大值，则将$- \boldsymbol f$作为参数，<strong>最后的结果取反</strong></li>
 <li>参数似乎取列向量较好，但实际上不是非常重要</li>
-</ul></li>
 </ul>
-<p><span class="math display">\[
-x_1 = 5
-\]</span></p>
-
+</li>
+</ul>
+<script type="math/tex; mode=display">
+x_1 = 5</script>
       </section>
 
       
