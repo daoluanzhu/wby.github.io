@@ -284,6 +284,28 @@ f\)</span>作为参数，<strong>最后的结果取反</strong></li>
 <!-- mathjax -->
 
 
+<!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "output/HTML-CSS"],   # 可以更改mathjax的默认输出样式
+        tex2jax: {
+            inlineMath: [ ['$', '$'] ],
+            displayMath: [ ['$$', '$$']],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        },
+        messageStyle: "none",
+        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+    });
+    </script>
+
+<!-- 国外源,不建议采用 -->
+<!-- <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+
+<script type="text/javascript" src="https://mathjax.josephjctang.com/MathJax.js?config=TeX-MML-AM_HTMLorMML">
+</script>
+
 
     <!-- footer container -->
 <footer id="footer" class="footer">
