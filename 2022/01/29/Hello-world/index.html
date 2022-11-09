@@ -177,29 +177,29 @@
 
   
   
-    <div class="valine-container comments-container content-padding--primary soft-size--large soft-style--box">
-      <div id="valine_thread" class="valine-thread"></div>
-    </div>
-    <script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+  
+  
+
+  
+  
+    <div id="gitalk-container"></div>
+
+    <link rel="stylesheet" href="https://unpkg.com/gitalk@latest/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+    <script src="https://priesttomb.github.io/js/md5.min.js"></script>
     <script type="text/javascript">
-      new Valine({
-        el: "#valine_thread",
-        appId: "bX9WRP8EXFjaQyZxwDtZz0H8-gzGzoHsz",
-        appKey: "uFyfEKrGG4qXHuJF7oXIl6j9",
-        avatar: "mm",
-        placeholder: "随便说点什么8",
-        notify: "false",
-        visitor: "false",
-        pageSize: "10",
-      });
+      new Gitalk({
+          clientID: '217f4d8f01319dea0883',
+          clientSecret: '188f564273ed712c8b17b55fdbac23fa00acfe9b',
+          repo: 'BlogComment',
+          owner: 'wby-20',
+          admin: 'wby-20',
+          id: md5(location.pathname),
+          distractionFreeMode: true
+      }).render('gitalk-container')
     </script>
-  
-
-  
-  
-
-  
+    <!-- <div> 原神 </div>  -->
   
 
 
