@@ -38,8 +38,11 @@
   
 
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/github.css">
+  <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script> -->
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
   <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
 
   
@@ -311,7 +314,7 @@
   <!-- 尾部用户自定义相关内容 -->
 <script> 
     $('pre code').each(function(i, block) {
-      hljs.highlightBlock(block);
+    //   hljs.highlightBlock(block);
       var lines = $(this).text().split('\n').length - 1;
       var $numbering = $('<ul/>').addClass('pre-numbering');
       $(this)
