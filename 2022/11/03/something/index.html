@@ -46,6 +46,23 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
+
+  <script>
+    hljs.initHighlightingOnLoad();
+
+    $('pre code').each(function(i, block) {
+    //hljs.highlightBlock(block);
+    var lines = $(this).text().split('\n').length - 1;
+    var $numbering = $('<ul/>').addClass('pre-numbering');
+    $(this)
+      .addClass('has-numbering')
+      .parent()
+      .append($numbering);
+    for(i=1;i<=lines;i++){
+      $numbering.append($('<li/>').text(i));
+    }
+  });
+  </script>
 </head>
 <body>
   <div class="root-container">
@@ -398,21 +415,6 @@
 
   <!-- <script src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script> -->
 
-  <script>
-    hljs.initHighlightingOnLoad();
-
-    $('pre code').each(function(i, block) {
-    //hljs.highlightBlock(block);
-    var lines = $(this).text().split('\n').length - 1;
-    var $numbering = $('<ul/>').addClass('pre-numbering');
-    $(this)
-      .addClass('has-numbering')
-      .parent()
-      .append($numbering);
-    for(i=1;i<=lines;i++){
-      $numbering.append($('<li/>').text(i));
-    }
-  });
-  </script>
+  
 </body>
 </html>
