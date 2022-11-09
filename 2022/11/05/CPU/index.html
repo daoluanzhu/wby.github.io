@@ -405,6 +405,9 @@
   
   <!-- 尾部用户自定义相关内容 -->
 <script> 
+
+    import $ from 'jquery'
+
     $('pre code').each(function(i, block) {
     //   hljs.highlightBlock(block);
       var lines = $(this).text().split('\n').length - 1;
