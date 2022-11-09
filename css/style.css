@@ -270,6 +270,21 @@ dfn {
 .content-padding--primary {
   padding: var(--content-primary-padding);
 }
+.pre-numbering {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 100%;
+  padding: 0.5em 0.2em 0.5em 0;
+  border-right: 1px solid #c3ccd0;
+  border-radius: 3px 0 0 3px;
+  background-color: #eee;
+  text-align: right;
+  font-size: 1em;
+  color: #0cbb18;
+  list-style: none;
+}
 [class*=soft-size--].soft-size--large {
   --radius: var(--soft-large-radius);
 }
@@ -974,21 +989,6 @@ html.show-mobile-nav .navbar-list {
   word-wrap: normal;
   word-break: keep-all;
   white-space: pre;
-}
-.markdown-body .pre-numbering {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 100%;
-  padding: 0.5em 0.2em 0.5em 0;
-  border-right: 1px solid #c3ccd0;
-  border-radius: 3px 0 0 3px;
-  background-color: #eee;
-  text-align: right;
-  font-size: 1em;
-  color: #aaa;
-  list-style: none;
 }
 .markdown-body .aplayer.aplayer-box {
 /** aplayer */
