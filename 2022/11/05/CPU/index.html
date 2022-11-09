@@ -404,7 +404,7 @@
   <!-- 尾部用户自定义相关内容 -->
 <script> 
     $('pre code').each(function(i, block) {
-      //hljs.highlightBlock(block);
+      hljs.highlightBlock(block);
       var lines = $(this).text().split('\n').length - 1;
       var $numbering = $('<ul/>').addClass('pre-numbering');
       $(this)
