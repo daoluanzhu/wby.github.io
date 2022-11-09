@@ -949,7 +949,7 @@ html.show-mobile-nav .navbar-list {
 }
 .markdown-body .highlight .gutter pre,
 .markdown-body .gist .gist-file .gist-data .line-numbers {
-  color: #666;
+  color: #08b61c;
   padding-right: 20px;
 }
 .markdown-body .highlight pre {
