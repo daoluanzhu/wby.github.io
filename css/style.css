@@ -945,13 +945,13 @@ html.show-mobile-nav .navbar-list {
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
 }
 .markdown-body code {
-  padding: 0 0.3em;
+  padding: 0 30em;
   margin-left: 0.3em;
   margin-right: 0.3em;
   background-color: var(--theme-bg-shadow);
 }
 .markdown-body pre code {
-  background: #545454;
+  background: none;
   text-shadow: none;
   padding: 0;
 }
