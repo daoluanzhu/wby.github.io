@@ -960,7 +960,6 @@ html.show-mobile-nav .navbar-list {
   background: #06d1fa;
   overflow: auto;
   color: #eb0606;
-  padding: 5px 5px;
 }
 .markdown-body .highlight .gutter pre,
 .markdown-body .gist .gist-file .gist-data .line-numbers {
