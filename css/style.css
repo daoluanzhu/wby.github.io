@@ -957,7 +957,8 @@ html.show-mobile-nav .navbar-list {
 }
 .markdown-body pre,
 .markdown-body .highlight {
-  background: #06d1fa;
+  background: #fff;
+  overflow: auto;
   color: #eb0606;
 }
 .markdown-body .highlight .gutter pre,
