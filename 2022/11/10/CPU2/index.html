@@ -29,7 +29,7 @@
 
   
 
-  <title>开始每天记点东西 | 啥都没有-_-</title>
+  <title>流水线冲突🤣 | 啥都没有-_-</title>
 
   
 
@@ -53,7 +53,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://wby-20.cn/image/light.png)"></div>
+    <div class="post-image" style="background-image: url(CPU2/miku.jpg)"></div>
   
 
   <!-- navbar -->
@@ -104,18 +104,18 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">开始每天记点东西</h1>
+          <h1 class="title-wrap">流水线冲突🤣</h1>
           <h2 class="title-sub-wrap">
             <strong>wby</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-11-03T13:31:08.000Z" itemprop="datePublished">2022-11-03</time>
+            <time  class="article-date" datetime="2022-11-10T14:09:20.000Z" itemprop="datePublished">2022-11-10</time>
           </h2>
           <ul class="wrap-list dark">
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/">🏷️ 随便写写</a></li>
+    <li><a href="/tags/%E9%80%A0%E6%9C%BA/">🏷️ 造机</a></li>
   
 </ul>
         </div>
@@ -139,46 +139,23 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="开始随便记点东西"><a href="#开始随便记点东西" class="headerlink" title="开始随便记点东西"></a>开始随便记点东西</h2><p>突然想到高中时生物化学没事记点小东西，也许还挺有用的（</p>
-<ul>
-<li><p>编原作业中遇到的，一个句型不一定存在句柄，因为句柄需要最右推导，一个句型（不是句子）不一定存在最右推导</p>
-<p><img src="/2022/11/03/something/image1.png" alt="image1"></p>
-<p>比如这种终结符和非终结符乱七八糟混在一起的就不存在</p>
-</li>
-</ul>
-
+        <h2 id="上条博客写完概况再来看看冲突😇"><a href="#上条博客写完概况再来看看冲突😇" class="headerlink" title="上条博客写完概况再来看看冲突😇"></a>上条博客写完概况再来看看冲突😇</h2>
       </section>
 
       
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-      <div class="card-cover" background-image-lazy data-img="https://wby-20.cn/image/coco.jpg"></div>
-    
-    <div class="card-text">
-      
-        <a href="/2022/11/04/test/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">test</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://wby-20.cn/image/girl.png"></div>
+      <div class="card-cover" background-image-lazy data-img="https://wby-20.cn/image/sword.png"></div>
     
     <div class="card-text">
       
-        <a href="/2022/01/29/Hello-world/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Hello world !</h2>
+        <a href="/2022/11/05/CPU/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">捏麻麻滴要开始造机了😇</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -370,6 +347,34 @@
 
   
   <!-- aplayer -->
+
+
+  <!-- aplayer 音频 start -->
+  <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
+  <script type="text/javascript" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+  <script type="text/javascript">
+    const aplayer = document.querySelectorAll(".aplayer-box");
+    aplayer && initaplayer(aplayer);
+    function initaplayer(els) {
+      let elsArr = Array.from(els);
+      elsArr.forEach(el => {
+        let params = {
+          container: el,
+          audio: { ...el.dataset },
+          theme: "#b7daff",
+          autoplay: false,
+          loop: false,
+          mutex: true,
+        }
+        if (el.dataset.lrc) {
+          params['lrcType'] = 3
+        }
+        new APlayer(params);
+      });
+    }
+  </script>
+  <!-- aplayer 音频 end -->
+  
 
 
 <!-- dplayer -->
