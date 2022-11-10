@@ -140,8 +140,55 @@
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
         <h2 id="好像要开始造机了，来点大家想看的东西"><a href="#好像要开始造机了，来点大家想看的东西" class="headerlink" title="好像要开始造机了，来点大家想看的东西"></a>好像要开始造机了，来点大家想看的东西</h2><p>争取LAB6肝个流水线出来😇</p>
-<h4 id="设计理念"><a href="#设计理念" class="headerlink" title="设计理念"></a>设计理念</h4><ul>
-<li>流水线CPU不是状态机，课上说的每一个部分都是模块</li>
+<h4 id="流水线设计理念"><a href="#流水线设计理念" class="headerlink" title="流水线设计理念"></a>流水线设计理念</h4><ul>
+<li><p>以<strong>需要的资源和时间</strong>为标准将一条指令拆成5个部分，每个时间点同时执行5条指令的不同阶段：</p>
+<ul>
+<li>IF：从指令计数器PC取址，<strong>PC的更新</strong>（+4在IF阶段就可以完成，但跳转需要在EXE阶段完成）<ul>
+<li>占用资源：PC、指令存储器、总线</li>
+</ul>
+</li>
+<li>ID&#x2F;RF：指令的译码和寄存器堆的读取<ul>
+<li>占用资源：寄存器堆，指令译码器（类似LAB3的那一堆）</li>
+</ul>
+</li>
+<li>EXE：指令的执行阶段，主要是计算数据&#x2F;地址，PC就在这算完<ul>
+<li>占用资源：ALU</li>
+</ul>
+</li>
+<li>MEM：读写内存&#x2F;串口<ul>
+<li>占用资源：总线、数据存储器（事实上和数据存储器在一起，因此需要mux区分）</li>
+</ul>
+</li>
+<li>WB：写回寄存器<ul>
+<li>占用资源：寄存器堆</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>流水线的核心是<strong>数据</strong>和<strong>控制</strong>的传递，为了保存这些值引入<strong>流水线寄存器</strong></p>
+<ul>
+<li>IF&#x2F;ID<ul>
+<li>数据：</li>
+<li>控制信号：</li>
+</ul>
+</li>
+<li>ID&#x2F;EXE<ul>
+<li>数据：</li>
+<li>控制信号：</li>
+</ul>
+</li>
+<li>EXE&#x2F;MEM<ul>
+<li>数据：</li>
+<li>控制信号：</li>
+</ul>
+</li>
+<li>MEX&#x2F;WB<ul>
+<li>数据：</li>
+<li>控制信号：</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
       </section>
