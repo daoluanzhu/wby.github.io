@@ -148,7 +148,7 @@
 <li>PC的更新有两种情况：在IF段+4，在EXE段计算跳转</li>
 </ul>
 </li>
-<li>ID&#x2F;RF：指令的译码和寄存器堆的读取<ul>
+<li>ID/RF：指令的译码和寄存器堆的读取<ul>
 <li>占用资源：寄存器堆，指令译码器（类似LAB3的那一堆）</li>
 </ul>
 </li>
@@ -159,7 +159,7 @@
 <li>根据是否是跳转型指令生成IF段PC的控制信号</li>
 </ul>
 </li>
-<li>MEM：读写内存&#x2F;串口<ul>
+<li>MEM：读写内存/串口<ul>
 <li>占用资源：总线、数据存储器（事实上和数据存储器在一起，因此需要mux区分）</li>
 </ul>
 </li>
@@ -173,7 +173,7 @@
 <li><p>流水线的核心是<strong>数据</strong>和<strong>控制</strong>的传递，为了保存这些值引入<strong>流水线寄存器</strong>。数据存储的原则：<strong>应存尽存</strong></p>
 <ul>
 <li><del>PC本身也可以被看作一个流水线寄存器</del></li>
-<li>IF&#x2F;ID<ul>
+<li>IF/ID<ul>
 <li>数据：PC、inst指令</li>
 <li>控制信号：<ul>
 <li><strong>本身无，负责生成后边的信号</strong></li>
@@ -181,7 +181,7 @@
 </li>
 </ul>
 </li>
-<li>ID&#x2F;EXE<ul>
+<li>ID/EXE<ul>
 <li>数据：<ul>
 <li>PC、rs1_data、rs2_data、rd</li>
 <li>imm： ID阶段就根据指令类型生成对应立即数</li>
@@ -197,7 +197,7 @@
 </li>
 </ul>
 </li>
-<li>EXE&#x2F;MEM<ul>
+<li>EXE/MEM<ul>
 <li>数据：<ul>
 <li>PC、rd</li>
 <li>alu_result：可能用作MEM地址或WB数据</li>
@@ -212,7 +212,7 @@
 </li>
 </ul>
 </li>
-<li>MEM&#x2F;WB<ul>
+<li>MEM/WB<ul>
 <li>数据：<ul>
 <li>rf_wdata： PC+4、mem_data、alu_result其中一个</li>
 <li>rd</li>
@@ -227,7 +227,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="/2022/11/05/CPU/CPU%5Ccpu.jpg" alt="cpu"></p>
+<p><img src="/2022/11/05/CPU/cpu.jpg" alt="cpu"></p>
 <h4 id="需要注意的问题"><a href="#需要注意的问题" class="headerlink" title="需要注意的问题"></a>需要注意的问题</h4><ul>
 <li>在riscv仿存指令中，一般rs1表示基址寄存器，rs2位数据寄存器</li>
 </ul>
