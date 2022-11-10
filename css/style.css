@@ -951,7 +951,7 @@ html.show-mobile-nav .navbar-list {
   background-color: var(--theme-bg-shadow);
 }
 .markdown-body pre code {
-  background: none;
+  background: #545454;
   text-shadow: none;
   padding: 0;
 }
@@ -965,9 +965,6 @@ html.show-mobile-nav .navbar-list {
 .markdown-body .highlight .gutter pre,
 .markdown-body .gist .gist-file .gist-data .line-numbers {
   color: #818181;
-}
-.markdown-body .highlight .code pre {
-  background: #264592;
 }
 .markdown-body .highlight pre {
   border: none;
