@@ -965,7 +965,6 @@ html.show-mobile-nav .navbar-list {
 .markdown-body .highlight .gutter pre,
 .markdown-body .gist .gist-file .gist-data .line-numbers {
   color: #818181;
-  padding-right: 50px;
 }
 .markdown-body .highlight pre {
   border: none;
