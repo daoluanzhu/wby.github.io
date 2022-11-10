@@ -965,12 +965,12 @@ html.show-mobile-nav .navbar-list {
 .markdown-body .highlight .gutter pre,
 .markdown-body .gist .gist-file .gist-data .line-numbers {
   color: #818181;
+  background: #816985;
 }
 .markdown-body .highlight pre {
   border: none;
   margin: 0;
   padding: 0;
-  background: #849445;
 }
 .markdown-body .highlight table {
   margin: 0;
