@@ -29,7 +29,7 @@
 
   
 
-  <title>about | 啥都没有-_-</title>
+  <title>再来看看造机实现🥵 | 啥都没有-_-</title>
 
   
 
@@ -51,7 +51,7 @@
   <div class="root-container">
     
 <!-- header container -->
-<header class="header-container">
+<header class="header-container post">
   
     <div class="post-image" style="background-image: url(https://wby-20.cn/image/miku.jpg)"></div>
   
@@ -101,36 +101,104 @@
 
   
   
-
-  
-  
     <div class="header-content">
-      <div class="post-text layout-block layout-padding">
-        <h1 class="title-wrap">about</h1>
-        
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">再来看看造机实现🥵</h1>
+          <h2 class="title-sub-wrap">
+            <strong>wby</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2022-11-11T08:58:15.000Z" itemprop="datePublished">2022-11-11</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/%E9%80%A0%E6%9C%BA/">🏷️ 造机</a></li>
+  
+</ul>
+        </div>
       </div>
     </div>
+  
+
+  
   
   
 </header>
 
-    <!-- 分页(其他自定义页面) -->
+    <!-- 文章 -->
 
-<!-- 自定义页面 -->
-
+<!-- 文章内容 -->
 <div class="body-container">
   <article class="content-container layout-block post-container">
     <div class="article-info">
       
+      
+      
+      
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        
+        <h2 id="这里开始写一些造机的初步实现🖥️"><a href="#这里开始写一些造机的初步实现🖥️" class="headerlink" title="这里开始写一些造机的初步实现🖥️"></a>这里开始写一些造机的初步实现🖥️</h2>
       </section>
 
       
       
+        <nav class="article-nav">
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+      <div class="card-cover" background-image-lazy data-img="https://wby-20.cn/image/miku2.png"></div>
+    
+    <div class="card-text">
+      
+        <a href="/2022/11/10/CPU2/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">流水线冲突🤣</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
 
-      
-      
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+
+  
+  
+    <div id="gitalk-container"></div>
+
+    <link rel="stylesheet" href="https://unpkg.com/gitalk@latest/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+    <script src="https://priesttomb.github.io/js/md5.min.js"></script>
+    <script type="text/javascript">
+      new Gitalk({
+          clientID: '217f4d8f01319dea0883',
+          clientSecret: '188f564273ed712c8b17b55fdbac23fa00acfe9b',
+          repo: 'BlogComment',
+          owner: 'wby-20',
+          admin: 'wby-20',
+          id: md5(location.pathname),
+          distractionFreeMode: true
+      }).render('gitalk-container')
+    </script>
+    <!-- <div> 原神 </div>  -->
+  
+
+
+      </section>
     </div>
     <div class="widget-info">
       <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -167,6 +235,8 @@
     </div>
   </div>
 </section>
+
+      
 
       
 <section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -212,6 +282,11 @@
     </div>
   </article>
 </div>
+
+<!-- mathjax -->
+
+
+
 
 
     <!-- footer container -->
@@ -272,6 +347,34 @@
 
   
   <!-- aplayer -->
+
+
+  <!-- aplayer 音频 start -->
+  <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
+  <script type="text/javascript" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+  <script type="text/javascript">
+    const aplayer = document.querySelectorAll(".aplayer-box");
+    aplayer && initaplayer(aplayer);
+    function initaplayer(els) {
+      let elsArr = Array.from(els);
+      elsArr.forEach(el => {
+        let params = {
+          container: el,
+          audio: { ...el.dataset },
+          theme: "#b7daff",
+          autoplay: false,
+          loop: false,
+          mutex: true,
+        }
+        if (el.dataset.lrc) {
+          params['lrcType'] = 3
+        }
+        new APlayer(params);
+      });
+    }
+  </script>
+  <!-- aplayer 音频 end -->
+  
 
 
 <!-- dplayer -->
