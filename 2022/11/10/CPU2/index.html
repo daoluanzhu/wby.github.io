@@ -139,7 +139,42 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="上条博客写完概况再来看看冲突😇"><a href="#上条博客写完概况再来看看冲突😇" class="headerlink" title="上条博客写完概况再来看看冲突😇"></a>上条博客写完概况再来看看冲突😇</h2>
+        <h2 id="再来看看冲突😇"><a href="#再来看看冲突😇" class="headerlink" title="再来看看冲突😇"></a>再来看看冲突😇</h2><h3 id="结构冲突"><a href="#结构冲突" class="headerlink" title="结构冲突"></a>结构冲突</h3><p>硬件资源无法满足指令的重叠执行，目前还不用考虑数据是否正确的问题</p>
+<ul>
+<li>RF和WB读写寄存器的冲突，由于寄存器读写口分离可以天然解决</li>
+<li>IF和MEM内存读写的冲突<ul>
+<li>chche：指令和数据放到两个chche中</li>
+<li>气泡：LAB6使用</li>
+</ul>
+</li>
+</ul>
+<h3 id="数据冲突"><a href="#数据冲突" class="headerlink" title="数据冲突"></a>数据冲突</h3><p>分类：</p>
+<ul>
+<li>写后写冲突WAW、读后写冲突WAR：（”读后写“是正确的顺序）<strong>RISCV不存在问题</strong></li>
+<li><strong>写后读冲突RAW</strong>：在前边指令WB之前后边指令就已经要RF</li>
+</ul>
+<p>解决方案：</p>
+<ul>
+<li>数据旁路：EXE和MEM得到数据后直接给EXE<ul>
+<li>硬件表现：EXE&#x2F;MEM、MEM&#x2F;WB寄存器导出两个信号给EXE段的前递模块</li>
+<li>冲突检测:<ul>
+<li>EXE段：检查当前指令的<strong>ID&#x2F;EXE段</strong>和上一条指令的<strong>EXE&#x2F;MEM段</strong><ul>
+<li>本条指令的rs12是否等于上一条指令rd</li>
+<li>上一条指令是否要写入(<code>rf_wen</code>)</li>
+<li>写入是否为0寄存器（气泡可能会写0寄存器）</li>
+</ul>
+</li>
+<li>MEM段：</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>气泡</strong>：暂停流水线等价于插入空指令——气泡<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+
       </section>
 
       
