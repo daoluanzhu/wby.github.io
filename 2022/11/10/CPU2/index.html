@@ -159,7 +159,7 @@
 <li>硬件表现：EXE&#x2F;MEM、MEM&#x2F;WB寄存器导出两个信号给EXE段的前递模块</li>
 <li>冲突检测:<ul>
 <li>EXE段：检查当前指令的<strong>ID&#x2F;EXE段</strong>和上一条指令的<strong>EXE&#x2F;MEM段</strong><ul>
-<li>本条指令的rs12是否等于上一条指令rd</li>
+<li>本条指令的rs1&#x2F;2是否等于上一条指令rd</li>
 <li>上一条指令是否要写入(<code>rf_wen</code>)</li>
 <li>写入是否为0寄存器（气泡可能会写0寄存器）</li>
 </ul>
@@ -170,9 +170,28 @@
 </ul>
 </li>
 <li><strong>气泡</strong>：暂停流水线等价于插入空指令——气泡<ul>
-<li></li>
+<li>实现：暂停流水线一个周期<ul>
+<li>当前指令的控制信号全为0</li>
+<li>PC保持不变</li>
+<li><strong>检测处前一段</strong>的寄存器保持不变：例如ID段检测保持IF&#x2F;ID段不变</li>
 </ul>
 </li>
+<li>检测：指令的<strong>ID阶段</strong><ul>
+<li>上一条是load指令，其rd与当前指令的rs1&#x2F;2</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="控制冲突"><a href="#控制冲突" class="headerlink" title="控制冲突"></a>控制冲突</h3><p>跳转指令时会发生的冲突</p>
+<ul>
+<li>如果需要跳转<ul>
+<li>PC改为目的地址</li>
+<li>清除IF&#x2F;ID段寄存器的值</li>
+<li>当前指令控制信号改为0</li>
+</ul>
+</li>
+<li>如果不需要跳转</li>
 </ul>
 
       </section>
