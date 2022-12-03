@@ -29,7 +29,7 @@
 
   
 
-  <title>test | 啥都没有-_-</title>
+  <title>中断和异常🥵 | 啥都没有-_-</title>
 
   
 
@@ -53,7 +53,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://wby-20.cn/image/coco.jpg)"></div>
+    <div class="post-image" style="background-image: url(https://wby-20.cn/image/miku.jpg)"></div>
   
 
   <!-- navbar -->
@@ -104,18 +104,18 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">test</h1>
+          <h1 class="title-wrap">中断和异常🥵</h1>
           <h2 class="title-sub-wrap">
             <strong>wby</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-11-04T08:14:00.000Z" itemprop="datePublished">2022-11-04</time>
+            <time  class="article-date" datetime="2022-12-03T08:03:52.000Z" itemprop="datePublished">2022-12-03</time>
           </h2>
           <ul class="wrap-list dark">
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/%E6%B5%8B%E8%AF%95/">🏷️ 测试</a></li>
+    <li><a href="/tags/%E9%80%A0%E6%9C%BA/">🏷️ 造机</a></li>
   
 </ul>
         </div>
@@ -139,12 +139,29 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="来测试下插入音乐和视频"><a href="#来测试下插入音乐和视频" class="headerlink" title="来测试下插入音乐和视频"></a>来测试下插入音乐和视频</h2><div class="aplayer-box" data-​ data-url="https://wby-20.cn/image/bird.mp3" data-name="ツバメ" data-artist="YOASOBI" data-cover="https://wby-20.cn/image/bird_cover.jpg" data-lrc="https://wby-20.cn/image/bird.lrc" data-lrctype="3"></div>
-
-
-
-<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
-</blockquote>
+        <h2 id="中断和异常"><a href="#中断和异常" class="headerlink" title="中断和异常"></a>中断和异常</h2><h4 id="要干什么"><a href="#要干什么" class="headerlink" title="要干什么"></a>要干什么</h4><ul>
+<li><p>CSR硬件线程（hart）在不同的权级下工作实现不同级别的访问，<strong>暂时实现U和S两个权级</strong></p>
+<p><img src="https://pic4.zhimg.com/80/v2-cf59e84959560d2358536c0674e6913f_720w.webp" alt="img"></p>
+</li>
+<li><p>进行相关控制的CSR寄存器，<strong>这里实现7个</strong></p>
+</li>
+<li><p>相关控制的指令，<strong>这里实现7条</strong></p>
+</li>
+</ul>
+<h4 id="CSR"><a href="#CSR" class="headerlink" title="CSR"></a>CSR</h4><ul>
+<li>CSR地址空间共12位</li>
+<li><strong>CSR地址的高4bits（csr[11:0]）用于编码CSRs在各个权级上的可读写性</strong>。最高2bit（csr[11:10]）用于编码该寄存器是可读写（00，01或10）还是只读（11）。接下来2bit（csr[9:8]）编码了允许访问该CSR的最低权级。</li>
+<li>我们需要实现的7个CSR，<strong>全部可读写</strong><ul>
+<li>mtvec：0x305，机器异常处理基地址</li>
+<li>mscratch：0x340，scartch寄存器，用处异常处理者</li>
+<li>mepc：0x341，异常程序寄存器</li>
+<li>mcause：0x342，异常原因</li>
+<li>mstatus：0x300，机器状态寄存器</li>
+<li>mie：0x304，终端使能寄存器</li>
+<li>mip：0x344，机器中断挂起</li>
+</ul>
+</li>
+</ul>
 
       </section>
 
@@ -152,32 +169,16 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-      <div class="card-cover" background-image-lazy data-img="https://wby-20.cn/image/sword.png"></div>
-    
-    <div class="card-text">
-      
-        <a href="/2022/11/05/CPU/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">捏麻麻滴要开始造机了😇</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://wby-20.cn/image/light.png"></div>
+      <div class="card-cover" background-image-lazy data-img="https://wby-20.cn/image/miku3.jpg"></div>
     
     <div class="card-text">
       
-        <a href="/2022/11/03/something/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">开始每天记点东西</h2>
+        <a href="/2022/11/11/CPU3/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">再来看看造机实现🥵</h2>
         </a>
       
       <div class="card-text--row">Older</div>

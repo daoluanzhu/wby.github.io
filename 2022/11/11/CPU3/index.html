@@ -139,12 +139,88 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="这里开始写一些造机的初步实现🖥️"><a href="#这里开始写一些造机的初步实现🖥️" class="headerlink" title="这里开始写一些造机的初步实现🖥️"></a>这里开始写一些造机的初步实现🖥️</h2>
+        <h2 id="这里开始写一些造机的初步实现🖥️"><a href="#这里开始写一些造机的初步实现🖥️" class="headerlink" title="这里开始写一些造机的初步实现🖥️"></a>这里开始写一些造机的初步实现🖥️</h2><p>这里主要是流水线的实现部分，参考《自己动手造CPU》、bypass崔轶锴学长PPT</p>
+<h3 id="一些通用部分"><a href="#一些通用部分" class="headerlink" title="一些通用部分"></a>一些通用部分</h3><h4 id="指令寄存器"><a href="#指令寄存器" class="headerlink" title="指令寄存器"></a>指令寄存器</h4><ul>
+<li>如无必要，所有传递的信号都由流水线寄存器给出</li>
+</ul>
+<h4 id="Wishbone总线协议"><a href="#Wishbone总线协议" class="headerlink" title="Wishbone总线协议"></a>Wishbone总线协议</h4><p>从Master视角来看</p>
+<ol>
+<li><code>ack_i</code>：1表示slave完成请求</li>
+<li><code>dat_i</code>：从slave读来的数据，32位</li>
+<li><code>stb_o</code>：1表示master要发送请求</li>
+<li><code>cyc_o</code>：1表示要占用总线，一般设置<code>cyc_o = stb_o</code>即可</li>
+<li><code>we_o</code>：1表示master要写，0表示读</li>
+<li><code>adr_o</code>：读写的地址，32位</li>
+<li><code>dat_o</code>：输出的数据，32位</li>
+<li><code>sel_o</code>：读写的字节使能，对应位高表示有效，4位</li>
+</ol>
+<h4 id="气泡的插入"><a href="#气泡的插入" class="headerlink" title="气泡的插入"></a>气泡的插入</h4><ul>
+<li>引入<code>stall</code>和<code>flush</code>信号<ul>
+<li>stall信号表示不动</li>
+</ul>
+</li>
+<li>只控制<strong>流水线寄存器</strong></li>
+<li>气泡指令选取为<code>addi zero zero 0</code>，对应的inst为<code>32&#39;h00000013</code></li>
+</ul>
+<h3 id="流水线的硬件模型"><a href="#流水线的硬件模型" class="headerlink" title="流水线的硬件模型"></a>流水线的硬件模型</h3><h4 id="流水线寄存器"><a href="#流水线寄存器" class="headerlink" title="流水线寄存器"></a>流水线寄存器</h4><ul>
+<li>时序逻辑</li>
+<li>复位时将输出置为空指令，正常情况选择性地将数据传递出去</li>
+</ul>
+<h4 id="IF模块：PC"><a href="#IF模块：PC" class="headerlink" title="IF模块：PC"></a>IF模块：PC</h4><ul>
+<li>只在这里实现PC，取值由CPU的状态机完成</li>
+</ul>
+<p>输入：</p>
+<ul>
+<li>clk、rst、stall、flush</li>
+<li><u>其余控制信号</u></li>
+</ul>
+<p>输出：</p>
+<ul>
+<li>pc</li>
+</ul>
+<h4 id="ID模块"><a href="#ID模块" class="headerlink" title="ID模块"></a>ID模块</h4><ul>
+<li>组合逻辑实现即可，ID与寄存器堆是在CPU顶层中分开例化的</li>
+</ul>
+<p>输入：</p>
+<ul>
+<li>inst、pc</li>
+<li>rs1_data、rs2_data：寄存器堆传来的数据</li>
+<li><u>其余控制信号</u></li>
+</ul>
+<p>输出：</p>
+<ul>
+<li>rs1_addr、rs2_addr：传给寄存器堆的编号</li>
+<li>rd_addr：</li>
+<li>imm： imm_i、imm_s、imm_b、imm_u、imm_j</li>
+<li>opcode：</li>
+<li>funct3、funct7：</li>
+<li>jump_op：是否是跳转类型</li>
+<li>use_rs1：EXE阶段输入a使用rs1还是PC</li>
+<li>use_rs2：EXE阶段输入b使用rs2还是立即数</li>
+<li><u>后边的控制信号</u></li>
+</ul>
+
       </section>
 
       
       
         <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+      <div class="card-cover" background-image-lazy data-img="https://wby-20.cn/image/miku.jpg"></div>
+    
+    <div class="card-text">
+      
+        <a href="/2022/12/03/%E4%B8%AD%E6%96%AD%E5%92%8C%E5%BC%82%E5%B8%B8/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">中断和异常🥵</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
           
           
             <div class="article-nav-item layout-padding">
@@ -218,7 +294,7 @@
         <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
 </svg>
-        <span>6</span>
+        <span>7</span>
       </div>
       <div class="count-box--item">
         <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
