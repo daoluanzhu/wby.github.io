@@ -143,7 +143,7 @@
 <li><p>CSR硬件线程（hart）在不同的权级下工作实现不同级别的访问，<strong>暂时实现U和S两个权级</strong></p>
 <p><img src="https://pic4.zhimg.com/80/v2-cf59e84959560d2358536c0674e6913f_720w.webp" alt="img"></p>
 </li>
-<li><p>进行相关控制的CSR寄存器，<strong>这里实现7个</strong></p>
+<li><p>进行相关控制的CSR寄存器，<strong>这里实现8个</strong></p>
 </li>
 <li><p>相关控制的指令，<strong>这里实现7条</strong></p>
 </li>
@@ -151,14 +151,22 @@
 <h4 id="CSR"><a href="#CSR" class="headerlink" title="CSR"></a>CSR</h4><ul>
 <li>CSR地址空间共12位</li>
 <li><strong>CSR地址的高4bits（csr[11:0]）用于编码CSRs在各个权级上的可读写性</strong>。最高2bit（csr[11:10]）用于编码该寄存器是可读写（00，01或10）还是只读（11）。接下来2bit（csr[9:8]）编码了允许访问该CSR的最低权级。</li>
-<li>我们需要实现的7个CSR，<strong>全部可读写</strong><ul>
-<li>mtvec：0x305，机器异常处理基地址</li>
-<li>mscratch：0x340，scartch寄存器，用处异常处理者</li>
-<li>mepc：0x341，异常程序寄存器</li>
-<li>mcause：0x342，异常原因</li>
-<li>mstatus：0x300，机器状态寄存器</li>
-<li>mie：0x304，终端使能寄存器</li>
-<li>mip：0x344，机器中断挂起</li>
+<li>我们需要实现的8个CSR，<strong>全部可读写</strong><ul>
+<li><p>mtvec：0x305，机器异常处理基地址</p>
+</li>
+<li><p>mscratch：0x340，scartch寄存器，用处异常处理者</p>
+</li>
+<li><p>mepc：0x341，异常程序寄存器</p>
+</li>
+<li><p>mcause：0x342，异常原因</p>
+</li>
+<li><p>mstatus：0x300，机器状态寄存器</p>
+<p><img src="https://img-blog.csdnimg.cn/9ef4920449e440fda0d174c050b34209.png" alt="在这里插入图片描述"></p>
+</li>
+<li><p>mie：0x304，终端使能寄存器</p>
+</li>
+<li><p>mip：0x344，机器中断挂起</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -342,7 +350,7 @@
       
     </div>
      
-    <p>&copy; 2022 <a href="/" target="_blank">wby</a></p>
+    <p>&copy; 2023 <a href="/" target="_blank">wby</a></p>
 
     
 
