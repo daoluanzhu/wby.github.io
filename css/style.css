@@ -945,7 +945,7 @@ html.show-mobile-nav .navbar-list {
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
 }
 .markdown-body code {
-  padding: 0 30em;
+  padding: 0 0.3em;
   margin-left: 0.3em;
   margin-right: 0.3em;
   background-color: var(--theme-bg-shadow);
